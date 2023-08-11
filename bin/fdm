@@ -2,16 +2,15 @@
 const program = require('commander')
 
 program.usage('<command>')
-program.usage('-<command>')
 
 // 版本号命令
 program.version(require('../package').version, '-v, --version')
 
 program
-  .command('add')
-  .description('add a new template')
+  .command('create')
+  .description('create a new template')
   .action(() => {
-    console.log('添加模板命令')
+    console.log('创建模板命令')
   })
 
 program
@@ -21,5 +20,11 @@ program
     console.log('常用模板清单命令')
   })
 
+program
+  .command('add')
+  .option('-n, --name <items1> [items2]', '设置想要下载的依赖名字')
+  .action((options) => {
+    console.log('想要添加的依赖名字',options.name)
+  })
 //解析我们定义的命令并处理参数
 program.parse(process.argv)
