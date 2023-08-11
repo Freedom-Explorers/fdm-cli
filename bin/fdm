@@ -2,9 +2,10 @@
 const program = require('commander')
 
 program.usage('<command>')
+program.usage('-<command>')
 
 // 版本号命令
-program.version(require('../package').version)
+program.version(require('../package').version, '-v, --version')
 
 program
   .command('add')
