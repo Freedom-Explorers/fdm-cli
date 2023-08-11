@@ -1,0 +1,2 @@
+# fdm-cli
+freedom-cli
