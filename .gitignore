@@ -1,8 +1,7 @@
-/node_modules
+node_modules
 
 # log files
-/logs/
-npm-debug.log*
+.log*
 
 # Editor files
 .idea
