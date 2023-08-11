@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "fdm": "bin/fdm"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wangenze267/fdm-cli.git"
