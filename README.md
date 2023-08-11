@@ -1,2 +1,5 @@
-# fdm-cli
-freedom-cli
+## fdm-cli
+freedom-cli ( 自由的脚手架 )
+
+## 目的
+提高脚手架的自由度，可以灵活的搭建自己想要的初始化项目
