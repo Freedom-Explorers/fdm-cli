@@ -1,5 +1,8 @@
 node_modules
 
+# map files
+**/*.js.map
+
 # log files
 .log*
 

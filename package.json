@@ -2,10 +2,11 @@
   "name": "fdm-cli",
   "version": "1.0.0",
   "description": "freedom-cli",
-  "type":"module",
-  "main": "index.js",
+  "type": "module",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz"
   },
   "bin": {
     "fdm": "bin/fdm.js"
@@ -14,7 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/wangenze267/fdm-cli.git"
   },
-  "keywords": [],
+  "keywords": [
+    "CLI"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -29,5 +32,13 @@
     "inquirer": "^9.2.10",
     "log-symbols": "^5.1.0",
     "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.4.10",
+    "commitizen": "^4.3.0",
+    "cz-emoji-chinese": "^0.3.1",
+    "typescript": "^5.1.6"
   }
 }
