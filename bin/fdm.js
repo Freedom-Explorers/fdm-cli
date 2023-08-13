@@ -23,7 +23,7 @@ program
   .command('list')
   .description('List the templateList')
   .action(() => {
-    import('../commands/list')
+    import('../commands/list.js')
   })
 
 program
