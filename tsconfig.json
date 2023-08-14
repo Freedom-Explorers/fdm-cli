@@ -4,12 +4,17 @@
     "esModuleInterop": true,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "target": "es6",
+    "target": "ESNext",
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "sourceMap": false,
     "outDir": "./bin",
-    "baseUrl": "."
-  },
-  "exclude": ["node_modules"]
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@commands/*": ["commands/*"],
+      "@lib/*": ["lib/*"],
+      "@util/*": ["util/*"]
+    }
+  }
+  // "exclude": ["node_modules"]
 }

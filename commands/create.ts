@@ -3,7 +3,7 @@ import inquirer from 'inquirer'
 import { resolve } from 'path'
 const { prompt } = inquirer
 const { copy, pathExistsSync } = fse
-import { CWD, VUE_TEMPLATE } from '../lib/config/index.js'
+import { CWD, VUE_TEMPLATE } from '@lib/config/index.js'
 
 export async function createProject(project: Record<string, string>) {
   const { name } = project.name
