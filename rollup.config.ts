@@ -12,7 +12,8 @@ export default {
     {
       dir: outDir,
       format: 'esm',
-      preserveModules: true
+      preserveModules: true,
+      banner: '#!/usr/bin/env node'
     }
   ],
   plugins: [
