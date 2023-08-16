@@ -4,11 +4,11 @@ import { resolve } from 'path'
 import ora  from 'ora'
 import logSymbols  from 'log-symbols';
 import { showTable } from '@util/showTable'
+import { VUE_TEMPLATE } from '@lib/config/index.js'
+
 const spinner = ora('正在为你拼命加载...\n').start();
 
-const dir = resolve('./lib/template')
-
-fse.readdir(dir, (err,files) => {
+fse.readdir(VUE_TEMPLATE, (err,files) => {
   // 错误处理
   if(err){
     spinner.fail('似乎发生了什么错误');
