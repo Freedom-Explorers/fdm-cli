@@ -5,7 +5,7 @@ const program = new Command()
 program.usage('<command>')
 
 // 版本号命令
-program.version('1.0.0', '-v, --version')
+program.version('0.0.2', '-v, --version')
 
 program
   .command('create')
