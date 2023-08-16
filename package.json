@@ -3,7 +3,11 @@
   "version": "0.0.2",
   "description": "freedom-cli",
   "type": "module",
-  "main": "fdm.ts",
+  "main": "bin/fdm.js",
+  "module": "fdm.ts",
+  "files":[
+    "bin"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rollup --config rollup.config.ts --configPlugin typescript",
@@ -20,11 +24,11 @@
     "CLI"
   ],
   "author": "Ned",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wangenze267/fdm-cli/issues"
   },
-  "homepage": "https://github.com/wangenze267/fdm-cli#readme",
+  "homepage": "https://github.com/wangenze267/fdm-cli/",
   "dependencies": {
     "chalk": "^5.3.0",
     "cli-table": "^0.3.11",
