@@ -17,7 +17,7 @@ freedom-cli ( 向往自由的脚手架 )
 
 🎊 结识一群热爱学习、热爱开源的朋友
 
-如果你不知道从哪儿开始，可以阅读我们的 [贡献指南](https://github.com/wangenze267/fdm-cli/blob/dev/Contributor.md)
+如果你不知道从哪儿开始，可以阅读我们的 [贡献指南](https://github.com/wangenze267/fdm-cli/blob/main/Contributor.md)
 
 ## 🌠 维护者
 - [Ned](https://github.com/wangenze267)
