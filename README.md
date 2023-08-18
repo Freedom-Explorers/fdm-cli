@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/npm/v/fdm-cli?color=f03e3e" alt="npm" />
   </a>
   <a href="https://github.com/wangenze267/fdm-cli">
-    <img src="https://img.shields.io/github/stars/fzf404/sedom?color=1c7ed6" alt="star" />
+    <img src="https://img.shields.io/github/stars/wangenze267/fdm-cli?color=1c7ed6" alt="star" />
   </a>
   <a href="https://github.com/wangenze267/fdm-cli">
     <img src="https://img.shields.io/npm/l/fdm-cli?color=37b24d" alt="license" />
