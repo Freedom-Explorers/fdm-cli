@@ -26,10 +26,12 @@ program
   })
 
 program
-  .command('add')
-  .option('-n, --name <items1> [items2]', '设置想要下载的依赖名字')
-  .action((options) => {
-    console.log('想要添加的依赖名字', options.name)
+  .command('install <packageName>')
+  .option('install a package')
+  .action(async (packageName) => {
+    const { installPackage } = await import('./commands/install')
+    return installPackage(packageName)
   })
+
 //解析我们定义的命令并处理参数
 program.parse(process.argv)
