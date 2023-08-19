@@ -5,7 +5,7 @@
   "type": "module",
   "main": "bin/fdm.js",
   "module": "fdm.ts",
-  "files":[
+  "files": [
     "bin"
   ],
   "scripts": {
@@ -40,6 +40,8 @@
     "ora": "^7.0.1"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^5.0.0",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-typescript": "^11.1.2",
     "@types/cli-table": "^0.3.1",
     "@types/fs-extra": "^11.0.1",

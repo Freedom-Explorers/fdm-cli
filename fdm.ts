@@ -1,5 +1,5 @@
 import { Command } from 'commander'
-import { version } from './package.json'
+import { version } from '@/package.json'
 
 const program = new Command()
 
@@ -34,7 +34,7 @@ program
     return installPackage(packageName)
   })
 
-  program
+program
   .command('uninstall <packageName>')
   .option('uninstall a package')
   .action(async (packageName) => {
