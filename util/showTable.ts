@@ -2,7 +2,7 @@ import Table from 'cli-table3'
 import logSymbols from 'log-symbols'
 
 const table = new Table({
-  head: ['模板名'],
+  head: ['模板名', '模板信息'],
   style: {
     head: ['green']
   }
@@ -11,8 +11,8 @@ const table = new Table({
 export function showTable(tempList: string[]) {
   const list = tempList
   if (list.length > 0) {
-    list.forEach((key) => {
-      table.push([key])
+    list.forEach((tem: any) => {
+      table.push([tem.name, tem.description])
       if (table.length === list.length) {
         console.log(table.toString())
         process.exit()
