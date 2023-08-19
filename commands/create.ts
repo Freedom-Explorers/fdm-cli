@@ -3,7 +3,7 @@ import inquirer from 'inquirer'
 import { resolve } from 'path'
 const { prompt } = inquirer
 const { copy, pathExistsSync } = fse
-import { CWD, VUE_TEMPLATE } from '@lib/config/index.js'
+import { CWD, VUE_TEMPLATE } from '@lib/config'
 
 export async function createProject(project: Record<string, string>) {
   const { name } = project.name
@@ -32,6 +32,9 @@ export async function createProject(project: Record<string, string>) {
     console.log(`${name} already exists`)
     return
   }
-  const template = resolve(VUE_TEMPLATE, vueVersion == 'vue2' ? 'vue2app' : 'vue3app')
+  const template = resolve(
+    VUE_TEMPLATE,
+    vueVersion == 'vue2' ? 'vue2app' : 'vue3app'
+  )
   await copy(template, dir)
 }
