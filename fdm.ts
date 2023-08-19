@@ -15,7 +15,7 @@ program
   .option('-v3 --vue3', 'create a vue3 project')
   .description('create a new vue project')
   .action(async (option) => {
-    const { createProject } = await import('./commands/create')
+    const { createProject } = await import('@commands/create')
     return createProject(option)
   })
 
@@ -23,14 +23,14 @@ program
   .command('list')
   .description('List the templateList')
   .action(() => {
-    import('./commands/list')
+    import('@commands/list')
   })
 
 program
   .command('install <packageName>')
   .option('install a package')
   .action(async (packageName) => {
-    const { installPackage } = await import('./commands/install')
+    const { installPackage } = await import('@commands/install')
     return installPackage(packageName)
   })
 
