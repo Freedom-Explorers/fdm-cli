@@ -1,5 +1,5 @@
-import Table  from 'cli-table'
-import logSymbols  from 'log-symbols';
+import Table from 'cli-table3'
+import logSymbols from 'log-symbols'
 
 const table = new Table({
   head: ['模板名'],
@@ -8,7 +8,7 @@ const table = new Table({
   }
 })
 
-export function showTable (tempList: string[] ) {
+export function showTable(tempList: string[]) {
   const list = tempList
   if (list.length > 0) {
     list.forEach((key) => {
@@ -19,7 +19,7 @@ export function showTable (tempList: string[] ) {
       }
     })
   } else {
-    console.log(logSymbols.info,'模板库中暂无模板，请等待官方添加哦~')
+    console.log(logSymbols.info, '模板库中暂无模板，请等待官方添加哦~')
     process.exit()
   }
 }
