@@ -10,7 +10,7 @@ program.version(version, '-v, --version')
 
 program
   .command('create')
-  .option('-n --name <projectName>', 'your projectName')
+  .option('-n, --name <projectName>', 'your projectName')
   .option('-v2 --vue2', 'create a vue2 project')
   .option('-v3 --vue3', 'create a vue3 project')
   .description('create a new vue project')
@@ -28,7 +28,7 @@ program
 
 program
   .command('install <packageName>')
-  .option('install a package')
+  .description('install a package')
   .action(async (packageName) => {
     const { installPackage } = await import('@commands/install')
     return installPackage(packageName)
@@ -36,7 +36,7 @@ program
 
 program
   .command('uninstall <packageName>')
-  .option('uninstall a package')
+  .description('uninstall a package')
   .action(async (packageName) => {
     const { unInstallPackage } = await import('@/commands/uninstall')
     return unInstallPackage(packageName)
