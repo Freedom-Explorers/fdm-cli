@@ -27,7 +27,7 @@ program
   })
 
 program
-  .command('install <packageName>')
+  .command('install [packageName]')
   .description('install a package')
   .action(async (packageName) => {
     const { installPackage } = await import('@commands/install')
