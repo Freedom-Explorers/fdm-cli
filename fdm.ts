@@ -34,5 +34,13 @@ program
     return installPackage(packageName)
   })
 
+  program
+  .command('uninstall <packageName>')
+  .option('uninstall a package')
+  .action(async (packageName) => {
+    const { unInstallPackage } = await import('@/commands/uninstall')
+    return unInstallPackage(packageName)
+  })
+
 //解析我们定义的命令并处理参数
 program.parse(process.argv)
