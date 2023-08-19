@@ -1,11 +1,12 @@
 import { Command } from 'commander'
+import { version } from './package.json'
 
 const program = new Command()
 
 program.usage('<command>')
 
 // 版本号命令
-program.version('0.0.2', '-v, --version')
+program.version(version, '-v, --version')
 
 program
   .command('create')
