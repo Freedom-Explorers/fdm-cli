@@ -42,5 +42,13 @@ program
     return unInstallPackage(packageName)
   })
 
+program
+  .command('switch [packageManager]')
+  .description('switch packageManager')
+  .action(async (packageManager) => {
+    const { switchPackageManager } = await import('@/commands/switch')
+    return switchPackageManager(packageManager)
+  })
+
 //解析我们定义的命令并处理参数
 program.parse(process.argv)
