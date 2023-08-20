@@ -1,6 +1,6 @@
 {
   "name": "fdm-cli",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "freedom-cli",
   "type": "module",
   "main": "bin/fdm.js",
