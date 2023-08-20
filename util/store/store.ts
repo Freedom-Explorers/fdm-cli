@@ -1,5 +1,4 @@
 import Configstore from 'configstore'
-import { name } from '@/package.json'
 
 export interface Template {
   name: string
@@ -29,7 +28,7 @@ const defaultConfig: Config = {
   ]
 }
 
-const config = new Configstore(name, defaultConfig)
+const config = new Configstore('fdm-cli', defaultConfig)
 
 const defaultTemSymbolSet = new Set(
   defaultConfig.templateList.map((item) => Symbol.for(JSON.stringify(item)))
