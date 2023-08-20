@@ -1,10 +1,9 @@
-import fse from 'fs-extra'
+import { copy, pathExistsSync } from 'fs-extra'
 import inquirer from 'inquirer'
 import ora from 'ora'
 import logSymbols from 'log-symbols'
 import { resolve } from 'path'
 const { prompt } = inquirer
-const { copy, pathExistsSync } = fse
 import { CWD, TEMPLATE } from '@lib/config'
 import { get } from '@util/store'
 const templateList = get('templateList')
