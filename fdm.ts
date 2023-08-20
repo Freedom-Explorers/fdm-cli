@@ -28,7 +28,7 @@ program
   .command('install [packageName]')
   .description('install a package')
   .action(async (packageName: String) => {
-    const { installPackage } = await import('@/commands/installer')
+    const { installPackage } = await import('@commands/installer')
     return installPackage(packageName ?? '')
   })
 
@@ -36,7 +36,7 @@ program
   .command('uninstall [packageName]')
   .description('uninstall a package')
   .action(async (packageName: String) => {
-    const { unInstallPackage } = await import('@/commands/installer')
+    const { unInstallPackage } = await import('@commands/installer')
     return unInstallPackage(packageName ?? '')
   })
 
@@ -44,8 +44,18 @@ program
   .command('switch [packageManager]')
   .description('switch packageManager')
   .action(async (packageManager: String) => {
-    const { switchPackageManager } = await import('@/commands/switch')
+    const { switchPackageManager } = await import('@commands/switch')
     return switchPackageManager(packageManager)
+  })
+
+program
+  .command('save')
+  .option('<templatePath> [reName]', 'your templatePath')
+  .option('-l, --list <templatesPath>', 'your templateListPath')
+  .description('save template[s]')
+  .action(async (option, { args }) => {
+    const { save } = await import('@commands/save')
+    return save(option, args)
   })
 
 //解析我们定义的命令并处理参数
