@@ -1,5 +1,5 @@
 import config from '@util/store'
-import { exec } from 'child_process'
+import { ExecException, exec } from 'child_process'
 import logSymbols from 'log-symbols'
 import ora from 'ora'
 
@@ -32,4 +32,18 @@ function install(packageName: String) {
   } catch (error) {
     console.log(logSymbols.error, error)
   }
+}
+
+export function unInstallPackage(packageName: String) {
+  const spinner = ora(`unInstalling package: ${packageName}...\n`).start()
+  exec(`npm uninstall ${packageName}`, (error: ExecException, stdout: string, stderr: string) => {
+    if (error) {
+      spinner.fail('删除失败，似乎发生了什么错误')
+      console.error(`Error: ${error.message}`)
+      return
+    }
+    spinner.succeed('删除成功')
+    console.log(`${stdout}`)
+    console.error(`${stderr}`)
+  })
 }

@@ -29,23 +29,23 @@ program
 program
   .command('install [packageName]')
   .description('install a package')
-  .action(async (packageName) => {
-    const { installPackage } = await import('@commands/install')
+  .action(async (packageName: String) => {
+    const { installPackage } = await import('@/commands/installer')
     return installPackage(packageName)
   })
 
 program
   .command('uninstall <packageName>')
   .description('uninstall a package')
-  .action(async (packageName) => {
-    const { unInstallPackage } = await import('@/commands/uninstall')
+  .action(async (packageName: String) => {
+    const { unInstallPackage } = await import('@/commands/installer')
     return unInstallPackage(packageName)
   })
 
 program
   .command('switch [packageManager]')
   .description('switch packageManager')
-  .action(async (packageManager) => {
+  .action(async (packageManager: String) => {
     const { switchPackageManager } = await import('@/commands/switch')
     return switchPackageManager(packageManager)
   })
