@@ -1,20 +1,20 @@
-// 查看提供好的模板项目清单
-import fse from 'fs-extra'
 import ora from 'ora'
 import logSymbols from 'log-symbols'
 import { showTable } from '@util/showTable'
-import { VUE_TEMPLATE } from '@lib/config'
+import { get, Template } from '@util/store'
 
 const spinner = ora('正在为你拼命加载...\n').start()
+const templateList: Template[] = get('templateList')
+const templateNum = templateList.length
 
-fse.readdir(VUE_TEMPLATE, (err, files) => {
-  // 错误处理
-  if (err) {
-    spinner.fail('似乎发生了什么错误')
-    console.log(logSymbols.error, err)
+try {
+  if (templateNum === 0) {
+    spinner.fail('模板库中似乎还没有模板，快新建一个吧')
   } else {
-    spinner.succeed('加载成功，请查看结果')
+    spinner.succeed('模板库加载成功，请查看结果')
     // console.log(files)
-    showTable(files)
+    showTable(templateList)
   }
-})
+} catch (error) {
+  console.error(logSymbols.error, error)
+}
