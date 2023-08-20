@@ -11,9 +11,7 @@ program.version(version, '-v, --version')
 program
   .command('create')
   .option('-n, --name <projectName>', 'your projectName')
-  .option('-v2 --vue2', 'create a vue2 project')
-  .option('-v3 --vue3', 'create a vue3 project')
-  .description('create a new vue project')
+  .description('create a new project')
   .action(async (option) => {
     const { createProject } = await import('@commands/create')
     return createProject(option)
