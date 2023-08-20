@@ -14,7 +14,7 @@ const templateNames = templateList.map((tem) => {
 
 export async function createProject(project: { name: string }) {
   if (!templateNum) {
-    console.log(
+    console.error(
       logSymbols.error,
       '模板库中似乎还没有模板，快通过save命令保存一个吧'
     )
