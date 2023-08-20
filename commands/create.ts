@@ -7,7 +7,6 @@ const { prompt } = inquirer
 const { copy, pathExistsSync } = fse
 import { CWD, TEMPLATE } from '@lib/config'
 import { get } from '@util/store'
-import { dir } from 'console'
 const templateList = get('templateList')
 const templateNum = templateList.length
 const templateNames = templateList.map((tem: any) => {

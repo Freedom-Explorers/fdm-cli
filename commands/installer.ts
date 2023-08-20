@@ -6,7 +6,7 @@ import ora from 'ora'
 const packageManager = get('packageManager')
 
 const installTip = `${packageManager} Installing`
-const installPackageTip = `unInstalling`
+const installPackageTip = `Installing package:`
 const unInstallTip = `${packageManager} unInstalling`
 const unInstallPackageTip = `unInstalling package:`
 
@@ -16,7 +16,7 @@ export function installPackage(packageName: String) {
   ).start()
   exec(
     `${packageManager} install ${packageName}`,
-    (error: { message: any }, stdout: any, stderr: any) => {
+    (error: ExecException, stdout: string, stderr: string) => {
       if (error) {
         spinner.fail('下载失败，似乎发生了什么错误')
         console.error(`Error: ${error.message}`)
