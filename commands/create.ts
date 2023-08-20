@@ -51,6 +51,6 @@ export async function createProject(project: { name: string }) {
     spinner.succeed('创建成功，请查看结果')
   } catch (error) {
     spinner.fail('创建失败')
-    console.log(logSymbols.error, error)
+    console.error(logSymbols.error, error)
   }
 }
