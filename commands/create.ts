@@ -5,14 +5,14 @@ import logSymbols from 'log-symbols'
 import { resolve } from 'path'
 const { prompt } = inquirer
 import { CWD, TEMPLATE } from '@lib/config'
-import { get } from '@util/store'
-const templateList = get('templateList')
+import { get, Template } from '@util/store'
+const templateList: Template[] = get('templateList')
 const templateNum = templateList.length
-const templateNames = templateList.map((tem: any) => {
+const templateNames = templateList.map((tem) => {
   return tem.name
 })
 
-export async function createProject(project: Record<string, string>) {
+export async function createProject(project: { name: string }) {
   if (!templateNum) {
     console.log(
       logSymbols.error,

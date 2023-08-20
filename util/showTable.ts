@@ -1,5 +1,6 @@
 import Table from 'cli-table3'
 import logSymbols from 'log-symbols'
+import { Template } from '@util/store'
 
 const table = new Table({
   head: ['模板名', '模板信息'],
@@ -8,10 +9,10 @@ const table = new Table({
   }
 })
 
-export function showTable(tempList: string[]) {
+export function showTable(tempList: Template[]) {
   const list = tempList
   if (list.length > 0) {
-    list.forEach((tem: any) => {
+    list.forEach((tem) => {
       table.push([tem.name, tem.description])
       if (table.length === list.length) {
         console.log(table.toString())

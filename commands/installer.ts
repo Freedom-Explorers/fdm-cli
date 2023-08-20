@@ -19,12 +19,12 @@ export function installPackage(packageName: String) {
     (error: ExecException, stdout: string, stderr: string) => {
       if (error) {
         spinner.fail('下载失败，似乎发生了什么错误')
-        console.error(`Error: ${error.message}`)
+        console.error(logSymbols.error, `Error: ${error.message}`)
         return
       }
       spinner.succeed('下载成功')
       console.log(logSymbols.success, `${stdout}`)
-      console.error(`${stderr}`)
+      console.error(logSymbols.error, `${stderr}`)
     }
   )
 }
@@ -38,12 +38,12 @@ export function unInstallPackage(packageName: String) {
     (error: ExecException, stdout: string, stderr: string) => {
       if (error) {
         spinner.fail('删除失败，似乎发生了什么错误')
-        console.error(`Error: ${error.message}`)
+        console.error(logSymbols.error, `Error: ${error.message}`)
         return
       }
       spinner.succeed('删除成功')
-      console.log(`${stdout}`)
-      console.error(`${stderr}`)
+      console.log(logSymbols.success, `${stdout}`)
+      console.error(logSymbols.error, `${stderr}`)
     }
   )
 }

@@ -27,14 +27,14 @@ export async function save(option: Option, args: string[]) {
 }
 
 async function saveTemplate(path: string, name: string) {
-  if (!path) return console.log(logSymbols.error, '请输入模板路径')
+  if (!path) return console.error(logSymbols.error, '请输入模板路径')
   const realPath = resolve(CWD, path)
   const fileName = realPath.split(/[\\\/]/).pop()
   if (!name) name = fileName ?? ''
   const templateList = get('templateList')
   const templateListSet = new Set(templateList.map((item: any) => item.name))
   if (templateListSet.has(name)) {
-    console.log(logSymbols.error, `${name}模板名已存在`)
+    console.error(logSymbols.error, `${name}模板名已存在`)
     const { reName } = await prompt([
       {
         type: 'input',

@@ -22,7 +22,7 @@ function packageManagerExists(packageManager: String) {
     return true
   } catch (error) {
     spinner.fail('切换失败')
-    console.log(logSymbols.error, error)
+    console.error(logSymbols.error, error)
     return false
   }
 }
