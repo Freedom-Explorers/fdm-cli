@@ -16,5 +16,5 @@ try {
     showTable(templateList)
   }
 } catch (error) {
-  console.log(logSymbols.error, error)
+  console.error(logSymbols.error, error)
 }
