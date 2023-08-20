@@ -21,6 +21,10 @@ const defaultConfig: Config = {
     {
       name: 'vue3app',
       description: 'vue3 app template'
+    },
+    {
+      name: 'springboot',
+      description: 'a java template'
     }
   ]
 }
@@ -39,10 +43,7 @@ export const use = (key: string, value: any) => {
 }
 
 export const reset = () => (
-  config.clear(),
-  Object.keys(defaultConfig).forEach((key) =>
-    set(key, defaultConfig[key as keyof Config])
-  )
+  config.clear(), Object.keys(defaultConfig).forEach((key) => set(key, defaultConfig[key as keyof Config]))
 )
 
 export const getPath = () => config.path
