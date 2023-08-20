@@ -46,8 +46,6 @@ export async function createProject(project: Record<string, string>) {
     return
   }
   const template = resolve(TEMPLATE, Choice.template)
-  console.log(template)
-  console.log(dir)
   const spinner = ora('正在创建中...\n').start()
   try {
     await copy(template, dir)
