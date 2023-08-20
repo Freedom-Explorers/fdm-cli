@@ -31,15 +31,15 @@ program
   .description('install a package')
   .action(async (packageName: String) => {
     const { installPackage } = await import('@/commands/installer')
-    return installPackage(packageName)
+    return installPackage(packageName ?? '')
   })
 
 program
-  .command('uninstall <packageName>')
+  .command('uninstall [packageName]')
   .description('uninstall a package')
   .action(async (packageName: String) => {
     const { unInstallPackage } = await import('@/commands/installer')
-    return unInstallPackage(packageName)
+    return unInstallPackage(packageName ?? '')
   })
 
 program
