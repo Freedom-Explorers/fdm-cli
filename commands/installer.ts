@@ -1,9 +1,9 @@
-import config from '@util/store'
+import { get } from '@util/store'
 import { ExecException, exec } from 'child_process'
 import logSymbols from 'log-symbols'
 import ora from 'ora'
 
-const packageManager = config.get('packageManager')
+const packageManager = get('packageManager')
 
 const installTip = `${packageManager} Installing`
 const installPackageTip = `unInstalling`
@@ -23,7 +23,7 @@ export function installPackage(packageName: String) {
         return
       }
       spinner.succeed('下载成功')
-      console.log(`${stdout}`)
+      console.log(logSymbols.success, `${stdout}`)
       console.error(`${stderr}`)
     }
   )

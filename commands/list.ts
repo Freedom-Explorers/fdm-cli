@@ -1,10 +1,10 @@
 import ora from 'ora'
 import logSymbols from 'log-symbols'
 import { showTable } from '@util/showTable'
-import config from '@util/store'
+import { get } from '@util/store'
 
 const spinner = ora('正在为你拼命加载...\n').start()
-const templateList: [] = config.get('templateList')
+const templateList: [] = get('templateList')
 const templateNum = templateList.length
 
 try {
@@ -13,7 +13,7 @@ try {
   } else {
     spinner.succeed('模板库加载成功，请查看结果')
     // console.log(files)
-    showTable(config.get('templateList'))
+    showTable(get('templateList'))
   }
 } catch (error) {
   console.log(logSymbols.error, error)
