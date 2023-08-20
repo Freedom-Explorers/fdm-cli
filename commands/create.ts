@@ -41,7 +41,7 @@ export async function createProject(project: { name: string }) {
   const dir = resolve(CWD, name)
 
   if (pathExistsSync(dir)) {
-    console.log(logSymbols.error, `${name} already exists`)
+    console.error(logSymbols.error, `${name} already exists`)
     return
   }
   const template = resolve(TEMPLATE, Choice.template)
