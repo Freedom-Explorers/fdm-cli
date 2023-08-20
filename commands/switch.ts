@@ -1,12 +1,12 @@
 import ora from 'ora'
 import logSymbols from 'log-symbols'
-import config from '@util/store'
+import { set } from '@util/store'
 import { execSync } from 'child_process'
 const spinner = ora('切换中...\n').start()
 export function switchPackageManager(packageManager: String) {
   if (!packageManager) {
     // 默认包管理器为npm
-    config.set('packageManager', 'npm')
+    set('packageManager', 'npm')
     spinner.succeed(`当前为npm!`)
   } else {
     if (packageManagerExists(packageManager)) {
