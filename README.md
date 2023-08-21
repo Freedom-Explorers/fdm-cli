@@ -57,5 +57,3 @@ npm install fdm-cli -g
 
 - [Ned](https://github.com/wangenze267)
 - [Conard](https://github.com/Conard-Ferenc)
-- [HappySnappingTurtle](https://github.com/HappySnappingTurtle)
-- [凯老板的室友](https://github.com/shaoshao-bit)
