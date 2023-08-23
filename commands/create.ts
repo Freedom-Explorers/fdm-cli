@@ -1,11 +1,12 @@
-import { copy, pathExistsSync } from 'fs-extra'
+import pkg, { copy } from 'fs-extra'
 import inquirer from 'inquirer'
 import ora from 'ora'
 import logSymbols from 'log-symbols'
 import { resolve } from 'path'
-const { prompt } = inquirer
 import { CWD, TEMPLATE } from '@lib/config'
 import { get, Template } from '@util/store'
+const { pathExistsSync } = pkg
+const { prompt } = inquirer
 const templateList: Template[] = get('templateList')
 const templateNum = templateList.length
 const templateNames = templateList.map((tem) => {
