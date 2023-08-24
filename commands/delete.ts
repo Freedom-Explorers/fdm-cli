@@ -28,6 +28,5 @@ const delTelByName = (templateName: string) => {
   templateList = templateList.filter((item) => {
     return item.name !== templateName
   })
-  del('templateList')
   set('templateList',templateList)
 }
