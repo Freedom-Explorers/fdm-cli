@@ -1,6 +1,5 @@
-import ora from 'ora'
 import logSymbols from 'log-symbols'
-import { get, del, set, Template } from '@util/store'
+import { get, set, Template } from '@util/store'
 import { remove } from 'fs-extra'
 import { TEMPLATE } from '@lib/config'
 import { resolve } from 'path'
