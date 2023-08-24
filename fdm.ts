@@ -58,5 +58,14 @@ program
     return save(option, args)
   })
 
+program
+  .command('delete <templateName>')
+  .description('delete templateName')
+  .action(async (templateName: string) => {
+    const { deleteTemplate } = await import('@commands/delete')
+    return deleteTemplate(templateName)
+  })
+
+
 //解析我们定义的命令并处理参数
 program.parse(process.argv)
