@@ -1,40 +1,57 @@
-import fse from 'fs-extra'
+import pkg, { copy } from 'fs-extra'
 import inquirer from 'inquirer'
+import ora from 'ora'
+import logSymbols from 'log-symbols'
 import { resolve } from 'path'
+import { CWD, TEMPLATE } from '@lib/config'
+import { get, Template } from '@util/store'
+const { pathExistsSync } = pkg
 const { prompt } = inquirer
-const { copy, pathExistsSync } = fse
-import { CWD, VUE_TEMPLATE } from '@lib/config'
+const templateList: Template[] = get('templateList')
+const templateNum = templateList.length
+const templateNames = templateList.map((tem) => {
+  return tem.name
+})
 
-export async function createProject(project: Record<string, string>) {
+export async function createProject(project: { name: string }) {
+  if (!templateNum) {
+    console.error(
+      logSymbols.error,
+      '模板库中似乎还没有模板，快通过save命令保存一个吧'
+    )
+    return
+  }
   const { name } = project.name
     ? project
     : await prompt([
         {
           type: 'input',
           name: 'name',
-          message: 'Your Vue Project Name: ',
-          default: 'vue-app'
+          message: 'Your Project Name: ',
+          default: 'new-app'
         }
       ])
-  const isSelectVersion = project.vue2 ? 'vue2' : project.vue3 ? 'vue3' : false
-  const { vueVersion } = isSelectVersion
-    ? { vueVersion: isSelectVersion }
-    : await prompt([
-        {
-          type: 'list',
-          name: 'vueVersion',
-          message: 'Select the version of your project: ',
-          choices: ['vue2', 'vue3']
-        }
-      ])
+  const Choice = await prompt([
+    {
+      type: 'list',
+      name: 'template',
+      message: 'Select your project: ',
+      choices: templateNames
+    }
+  ])
   const dir = resolve(CWD, name)
+
   if (pathExistsSync(dir)) {
-    console.log(`${name} already exists`)
+    console.error(logSymbols.error, `${name} already exists`)
     return
   }
-  const template = resolve(
-    VUE_TEMPLATE,
-    vueVersion == 'vue2' ? 'vue2app' : 'vue3app'
-  )
-  await copy(template, dir)
+  const template = resolve(TEMPLATE, Choice.template)
+  const spinner = ora('正在创建中...\n').start()
+  try {
+    await copy(template, dir)
+    spinner.succeed('创建成功，请查看结果')
+  } catch (error) {
+    spinner.fail('创建失败')
+    console.error(logSymbols.error, error)
+  }
 }

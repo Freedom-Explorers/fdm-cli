@@ -4,9 +4,11 @@
 
 1. **`Fork`** 本项目
 
-2. **`clone`** 本项目 -- 执行 **`git clone https://github.com/wangenze267/fdm-cli.git`**
+2. **`clone`** 本项目至本地
 
-3. 在项目目录下执行 **`npm install`**
+3. 改动较大时，请根据自己本次开发，**新建项目分支**，并以开发内容作为分支名
+
+4. 在项目目录下执行 **`npm install`**
 
 ### 调试准备
 
@@ -19,3 +21,5 @@
 ### 提交准备
 
 请将代码提交到 **`dev`** 分支。
+
+请运行 `npm run commit` 进行 `commit` 操作或遵循 [Angular 提交信息规范](https://zj-git-guide.readthedocs.io/zh_CN/latest/message/Angular提交信息规范)
