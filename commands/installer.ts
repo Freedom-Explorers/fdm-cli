@@ -49,40 +49,32 @@ export function unInstallPackage(packageName: String) {
 }
 
 export function mavenClear() {
-    const spinner = ora(
-        `mvn clear ...\n`
-    ).start()
-    exec(
-        `mvn clear`,
-        (error: ExecException, stdout: string, stderr: string) => {
-            if (error) {
-                spinner.fail('清理失败，似乎发生了什么错误')
-                console.error(logSymbols.error, `Error: ${error.message}`)
-                return
-            }
-            spinner.succeed('清理成功')
-            console.log(logSymbols.success, `${stdout}`)
-            console.error(logSymbols.error, `${stderr}`)
-        }
-    )
+  const spinner = ora(`mvn clear ...\n`).start()
+  exec(`mvn clear`, (error: ExecException, stdout: string, stderr: string) => {
+    if (error) {
+      spinner.fail('清理失败，似乎发生了什么错误')
+      console.error(logSymbols.error, `Error: ${error.message}`)
+      return
+    }
+    spinner.succeed('清理成功')
+    console.log(logSymbols.success, `${stdout}`)
+    console.error(logSymbols.error, `${stderr}`)
+  })
 }
 
 export function mavenInstall() {
-    const spinner = ora(
-        `mvn install ...\n`
-    ).start()
-    exec(
-        `mvn install`,
-        (error: ExecException, stdout: string, stderr: string) => {
-            if (error) {
-                spinner.fail('依赖下载失败，似乎发生了什么错误')
-                console.error(logSymbols.error, `Error: ${error.message}`)
-                return
-            }
-            spinner.succeed('依赖下载成功')
-            console.log(logSymbols.success, `${stdout}`)
-            console.error(logSymbols.error, `${stderr}`)
-        }
-    )
+  const spinner = ora(`mvn install ...\n`).start()
+  exec(
+    `mvn install`,
+    (error: ExecException, stdout: string, stderr: string) => {
+      if (error) {
+        spinner.fail('依赖下载失败，似乎发生了什么错误')
+        console.error(logSymbols.error, `Error: ${error.message}`)
+        return
+      }
+      spinner.succeed('依赖下载成功')
+      console.log(logSymbols.success, `${stdout}`)
+      console.error(logSymbols.error, `${stderr}`)
+    }
+  )
 }
-

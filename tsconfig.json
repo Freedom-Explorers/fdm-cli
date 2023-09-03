@@ -14,7 +14,8 @@
       "@/*": ["./*"],
       "@commands/*": ["commands/*"],
       "@lib/*": ["lib/*"],
-      "@util/*": ["util/*"]
+      "@util/*": ["util/*"],
+      "@extends/*": ["extends/*"]
     }
   }
   // "exclude": ["node_modules"]
